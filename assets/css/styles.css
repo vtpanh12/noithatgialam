@@ -26,6 +26,7 @@ img{
 .header{
     position: sticky;
     top: 0;
+    padding: 5rem 0rem;
     z-index: 999;
     padding: 0px 10px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
@@ -63,6 +64,38 @@ img{
     background-color: var(--text-muted);
     color: var(--bg-main);
     border-radius: 50px;
+}
+
+#myHeader {
+    padding-top: 10px; 
+    padding-bottom: 20px;
+    transition: all 0.4s ease-in-out; 
+}
+
+#myHeader .navbar-brand img {
+    height: 100px; 
+    transition: all 0.4s ease-in-out; 
+}
+
+#myHeader .nav-link {
+    font-size: 16px;
+    transition: all 0.4s ease-in-out;
+}
+
+#myHeader.scrolled {
+    padding-top: 5px ;
+    padding-bottom: 5px ;
+}
+
+#myHeader.scrolled .navbar-brand img {
+    height: 60px; /* Ép Logo nhỏ lại */
+}
+
+#myHeader.scrolled .nav-link {
+    font-size: 14px; /* Ép chữ Menu nhỏ lại một chút */
+}
+.test{
+    height: 1000px;
 }
 @media (max-width: 768px) {
     .navbar-nav{
