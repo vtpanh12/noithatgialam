@@ -1,7 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Akt:wght@500&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-:root{
+:root {
     --bg-main: #1B263B;
     --bg-card: rgb(203, 233, 233);
     --text-main: #FFFFC9;
@@ -9,96 +8,77 @@
     --border-color: #cccccc;
     --bg-footer: rgb(51, 51, 51);
 }
-*{
+
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    /* border: 2px solid red; */
-    font-family: 'Akt', sans-serif;
-
-}
-img{
-    
-}
-.navbar{
-    background-color: var(--bg-main);
-}
-.header{
-    position: sticky;
-    top: 0;
-    padding: 5rem 0rem;
-    z-index: 999;
-    padding: 0px 10px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-    transition: 0.7s;
-}
-.navbar-nav{
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
-}
-.nav-link{
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    word-spacing: 2px;
-    color: var(--text-main);
-    padding: 0.3rem 3rem;
-    transition: all 0.3s ease;
-}
-.navbar-brand{
-    color: var(--text-main);
-    padding: 0;
-    
-}
-.navbar-brand img{
-    
-}
-.navbar .nav-link.active{
-    background-color: var(--text-muted);
-    color: var(--bg-main);
-    border-radius: 50px;
-}
-.nav-link.active.custom-btn-active,
-.nav-link:hover {
-    background-color: var(--text-muted);
-    color: var(--bg-main);
-    border-radius: 50px;
+    font-family: 'Roboto', sans-serif;
 }
 
+/* =========================================
+   1. SETUP TRẠNG THÁI BÌNH THƯỜNG CỦA HEADER
+   ========================================= */
 #myHeader {
-    padding-top: 10px; 
-    padding-bottom: 20px;
+    background-color: var(--bg-main);
+    padding-top: 15px; 
+    padding-bottom: 15px;
     transition: all 0.4s ease-in-out; 
 }
 
 #myHeader .navbar-brand img {
-    height: 100px; 
+    height: 90px; /* Cố định chiều cao thay vì dùng mw-100 */
+    width: auto;
     transition: all 0.4s ease-in-out; 
 }
 
+/* Định dạng các nút Menu */
 #myHeader .nav-link {
-    font-size: 16px;
-    transition: all 0.4s ease-in-out;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-main) !important; /* Ghi đè màu mặc định của Bootstrap */
+    padding: 8px 24px !important;
+    margin: 0px 1.4rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng Active và Hover gom chung */
+#myHeader .nav-link.active,
+#myHeader .nav-link:hover {
+    background-color: var(--text-muted);
+    color: var(--bg-main) !important;
+}
+
+/* Ẩn outline xấu xí của ô input khi click vào */
+.form-control:focus {
+    box-shadow: none;
+    border-color: var(--text-main);
 }
 
 #myHeader.scrolled {
-    padding-top: 5px ;
-    padding-bottom: 5px ;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* Đổ bóng đậm hơn khi cuộn */
 }
 
 #myHeader.scrolled .navbar-brand img {
-    height: 60px; /* Ép Logo nhỏ lại */
+    height: 55px; /* Ép logo nhỏ lại */
 }
 
 #myHeader.scrolled .nav-link {
-    font-size: 14px; /* Ép chữ Menu nhỏ lại một chút */
+    font-size: 14px;
+    padding: 6px 18px !important; /* Nút thu nhỏ lại một chút */
 }
-.test{
-    height: 1000px;
+
+.img-fluid {
+    max-width: 100%; 
+    height: auto; 
 }
-@media (max-width: 768px) {
-    .navbar-nav{
-        display: none;
-    }
+
+.test {
+    height: 2000px; /* Dài ra để dễ test scroll */
+    background-color: #f8f9fa; /* Cho màu xám nhẹ để phân biệt với header */
 }
