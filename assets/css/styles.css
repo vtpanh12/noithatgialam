@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+@import 'swiper/css/bundle';
 
 :root {
     --bg-main: #1B263B;
@@ -16,9 +17,6 @@
     font-family: 'Roboto', sans-serif;
 }
 
-/* =========================================
-   1. SETUP TRẠNG THÁI BÌNH THƯỜNG CỦA HEADER
-   ========================================= */
 #myHeader {
     background-color: var(--bg-main);
     padding-top: 15px; 
@@ -27,12 +25,11 @@
 }
 
 #myHeader .navbar-brand img {
-    height: 90px; /* Cố định chiều cao thay vì dùng mw-100 */
+    height: 90px;
     width: auto;
     transition: all 0.4s ease-in-out; 
 }
 
-/* Định dạng các nút Menu */
 #myHeader .nav-link {
     font-size: 15px;
     font-weight: 500;
@@ -45,14 +42,12 @@
     transition: all 0.3s ease;
 }
 
-/* Hiệu ứng Active và Hover gom chung */
 #myHeader .nav-link.active,
 #myHeader .nav-link:hover {
     background-color: var(--text-muted);
     color: var(--bg-main) !important;
 }
 
-/* Ẩn outline xấu xí của ô input khi click vào */
 .form-control:focus {
     box-shadow: none;
     border-color: var(--text-main);
@@ -70,15 +65,87 @@
 
 #myHeader.scrolled .nav-link {
     font-size: 14px;
-    padding: 6px 18px !important; /* Nút thu nhỏ lại một chút */
+    padding: 6px 18px !important; 
 }
 
 .img-fluid {
     max-width: 100%; 
     height: auto; 
 }
+.productSwiper{
+    --swiper-theme-color: #1B263B;
+    --swiper-navigation-size: 1rem;
+    --swiper-navigation-color: var(--bg-main);
+}
+.swiper-button-next,
+.swiper-button-prev {
+    background-color: #ffffff; 
+    width: 40px;
+    height: 40px;
+    padding: 8px 0px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
 
-.test {
-    height: 2000px; /* Dài ra để dễ test scroll */
-    background-color: #f8f9fa; /* Cho màu xám nhẹ để phân biệt với header */
+.card-custom {
+    background-color: #ffffff;
+    border: 1px solid #cfcaca !important;
+    border-radius: 16px; 
+    overflow: hidden; /* QUAN TRỌNG: Gọt viền ảnh khi bị zoom tràn ra ngoài */
+    transition: all 0.4s ease-in-out; /* Mọi hiệu ứng diễn ra mượt trong 0.4s */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03); /* Bóng đổ nhẹ nhàng lúc đứng im */
+}
+
+.card-custom:hover {
+    transform: translateY(-8px) scale(1.02); /* Vừa nảy lên 8px, vừa phình to ra 2% */
+    box-shadow: 0 20px 40px rgba(27, 38, 59, 0.15); /* Bóng đổ to, sâu và có màu hơi xanh Navy */
+    border-color: var(--bg-main) !important; /* Viền hiện rõ lên thành màu Xanh Navy */
+}
+
+.card-img-wrapper {
+    width: 100%;
+    height: 260px; /* KHÓA CỨNG CHIỀU CAO: Ảnh cao hay lùn đều bị nhét vào khung 260px này */
+    background-color: #fcfcfc; /* Nền xám siêu siêu nhạt để lót dưới ảnh */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* BÍ QUYẾT: Co rút ảnh lọt thỏm vào khung, cấm cắt xén */
+    padding: 10px; /* Thêm tí viền trắng quanh ảnh cho sang */
+    transition: transform 0.5s ease; /* Dặn ảnh: lúc bị zoom phải nở ra từ từ */
+}
+
+/* Lệnh bắt cầu: Hover vào Card -> Ảnh zoom lên */
+.card-custom:hover .card-img-wrapper img {
+    transform: scale(1.12); /* Phóng to ảnh lên 12% */
+}
+
+.btn-custom-contact {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #ffffff; /* Nền Xanh Navy */
+    color: var(--bg-main);; /* Chữ màu trắng */
+    border: 1px solid var(--bg-main); /* Viền Xanh Navy */
+    border-radius: 50px; /* Hình viên thuốc */
+    padding: 6px 28px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+/* Hover vào Nút Liên Hệ */
+.btn-custom-contact:hover {
+    background-color: var(--bg-main); /* Đổi nền sang Vàng nhạt */
+    color: #fff; /* Đổi chữ sang Xanh Navy */
+    transform: translateY(-2px); /* Nút nảy nhẹ lên một chút */
+    box-shadow: 0 8px 15px rgba(255, 255, 201, 0.4); /* Phát sáng màu vàng mờ mờ */
+}
+
+.test{
+    height: 100px;
 }
