@@ -76,6 +76,11 @@
     --swiper-theme-color: #1B263B;
     --swiper-navigation-size: 1rem;
     --swiper-navigation-color: var(--bg-main);
+    padding: 10px;
+    height: 400px;
+}
+.productSwiper .swiper-slide {
+    height: 100%;
 }
 .swiper-button-next,
 .swiper-button-prev {
@@ -88,64 +93,74 @@
 }
 
 .card-custom {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     background-color: #ffffff;
     border: 1px solid #cfcaca !important;
     border-radius: 16px; 
-    overflow: hidden; /* QUAN TRỌNG: Gọt viền ảnh khi bị zoom tràn ra ngoài */
-    transition: all 0.4s ease-in-out; /* Mọi hiệu ứng diễn ra mượt trong 0.4s */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03); /* Bóng đổ nhẹ nhàng lúc đứng im */
+    overflow: hidden; 
+    transition: all 0.4s ease-in-out; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03); 
 }
 
 .card-custom:hover {
-    transform: translateY(-8px) scale(1.02); /* Vừa nảy lên 8px, vừa phình to ra 2% */
-    box-shadow: 0 20px 40px rgba(27, 38, 59, 0.15); /* Bóng đổ to, sâu và có màu hơi xanh Navy */
-    border-color: var(--bg-main) !important; /* Viền hiện rõ lên thành màu Xanh Navy */
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(27, 38, 59, 0.15);
+    border-color: var(--bg-main) !important; 
 }
 
-.card-img-wrapper {
+.card-img-wrapped {
+    flex: 3;
     width: 100%;
-    height: 260px; /* KHÓA CỨNG CHIỀU CAO: Ảnh cao hay lùn đều bị nhét vào khung 260px này */
-    background-color: #fcfcfc; /* Nền xám siêu siêu nhạt để lót dưới ảnh */
+    height: 260px; 
+    background-color: #fcfcfc; 
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+
 }
 
-.card-img-wrapper img {
+.card-img-wrapped img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* BÍ QUYẾT: Co rút ảnh lọt thỏm vào khung, cấm cắt xén */
-    padding: 10px; /* Thêm tí viền trắng quanh ảnh cho sang */
-    transition: transform 0.5s ease; /* Dặn ảnh: lúc bị zoom phải nở ra từ từ */
+    object-fit: contain; 
+    padding: 10px;
+    transition: transform 0.5s ease; 
+}
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-/* Lệnh bắt cầu: Hover vào Card -> Ảnh zoom lên */
-.card-custom:hover .card-img-wrapper img {
-    transform: scale(1.12); /* Phóng to ảnh lên 12% */
+
+.card-custom:hover .card-img-wrapped img {
+    transform: scale(1.1);
 }
 
 .btn-custom-contact {
     display: inline-block;
     text-decoration: none;
-    background-color: #ffffff; /* Nền Xanh Navy */
-    color: var(--bg-main);; /* Chữ màu trắng */
-    border: 1px solid var(--bg-main); /* Viền Xanh Navy */
-    border-radius: 50px; /* Hình viên thuốc */
+    background-color: #ffffff;
+    color: var(--bg-main);;
+    border: 1px solid var(--bg-main);
+    border-radius: 50px; 
     padding: 6px 28px;
     font-weight: 600;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
 }
 
-/* Hover vào Nút Liên Hệ */
 .btn-custom-contact:hover {
-    background-color: var(--bg-main); /* Đổi nền sang Vàng nhạt */
-    color: #fff; /* Đổi chữ sang Xanh Navy */
-    transform: translateY(-2px); /* Nút nảy nhẹ lên một chút */
-    box-shadow: 0 8px 15px rgba(255, 255, 201, 0.4); /* Phát sáng màu vàng mờ mờ */
+    background-color: var(--bg-main); 
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(255, 255, 201, 0.4); 
 }
-
 .test{
     height: 100px;
 }

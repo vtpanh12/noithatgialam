@@ -13,11 +13,11 @@ const swiper = new Swiper('.productSwiper', {
     
     slidesPerView: 2, 
     spaceBetween: 20, 
-    loop: true,       
-    autoplay: {       
-             delay: 3000,  
-             disableOnInteraction: false, 
-         },
+    // loop: true,       
+    // autoplay: {       
+    //          delay: 3000,  
+    //          disableOnInteraction: false, 
+    //      },
 
     
     navigation: {
