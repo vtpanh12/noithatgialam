@@ -9,15 +9,15 @@ function checkScroll() {
 }
 window.addEventListener('DOMContentLoaded', checkScroll);
 window.addEventListener('scroll', checkScroll);
-const swiper = new Swiper('.productSwiper', {
+const swiperCard = new Swiper('.productSwiper', {
     
     slidesPerView: 2, 
     spaceBetween: 20, 
-    // loop: true,       
-    // autoplay: {       
-    //          delay: 3000,  
-    //          disableOnInteraction: false, 
-    //      },
+    loop: true,       
+    autoplay: {       
+             delay: 3000,  
+             disableOnInteraction: false, 
+         },
 
     
     navigation: {
@@ -33,4 +33,46 @@ const swiper = new Swiper('.productSwiper', {
              },
          },
 });
+const swiperList = new Swiper('.productListSwiper',{
+    slidesPerView: 2, 
+    spaceBetween: 30, 
+    loop: true,       
+    // autoplay: {       
+    //          delay: 3000,  
+    //          disableOnInteraction: false, 
+    //      },
+
+    
+    navigation: {
+        nextEl: '.swiper-buttonList-next',
+        prevEl: '.swiper-buttonList-prev',
+    },
+    breakpoints: {    
+             640: {
+                 slidesPerView: 2, 
+             },
+             992: {
+                 slidesPerView: 5, 
+             },
+         },
+    // breakpoints: {
+    //     0: {
+    //         slidesPerView: 2.2,
+    //         // Khoảng cách giữa các vòng tròn trên Mobile (15px)
+    //         spaceBetween: 15, 
+    //     },
+    //     768: {
+    //         slidesPerView: 3.5,
+    //         // Khoảng cách trên Tablet (30px)
+    //         spaceBetween: 30, 
+    //     },
+    //     1024: {
+    //         slidesPerView: 5,
+    //         // TĂNG KHOẢNG CÁCH TRÊN PC: Bạn thay đổi con số này (ví dụ: 50, 60, 80)
+    //         // Số càng lớn, các vòng tròn càng cách xa nhau
+    //         spaceBetween: 60, 
+    //     },
+    // }
+});
+
 
