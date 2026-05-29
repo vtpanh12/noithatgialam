@@ -137,7 +137,6 @@
     align-items: center;
 }
 
-
 .card-custom:hover .card-img-wrapped img {
     transform: scale(1.1);
 }
@@ -175,35 +174,31 @@
     background-color: #F5F5F5;
 
 }
-
-/* --- Khối bao bọc từng danh mục --- */
 .category-item {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Căn giữa vòng tròn và chữ */
+    align-items: center;
     cursor: pointer;
     margin: 0;
 }
-
-/* --- Vòng tròn trắng nổi 3D --- */
 .category-circle {
-    width: 200px;
-    height: 200px;
+    width: 100%; 
+    max-width: 160px;
+    aspect-ratio: 1 / 1;
     background-color: #ffffff;
     border-radius: 50%;
-    
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    margin-bottom: 20px; /* Khoảng cách từ vòng tròn xuống chữ */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Bóng đổ mờ 4% tạo độ sâu */
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .category-circle img {
-    width: 85px; /* Kích thước ảnh bên trong vòng tròn */
     height: auto;
+    width: 60%; 
+    max-width: 160px;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
@@ -216,6 +211,7 @@
     color: #1a1a1a;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    
 }
 
 .category-item:hover .category-circle {
@@ -231,4 +227,16 @@
 }
 .test{
     height: 100px;
+}
+@media(max-width: 768px){
+    .productSwiper, .list-bg{
+        padding: 0;
+    }
+    .category-item:hover .category-circle {
+        transform: translateY(-4px);
+    }
+    .category-title {
+        font-size: 1rem;
+        text-align: center;
+    }
 }
