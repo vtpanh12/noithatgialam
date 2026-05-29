@@ -60,7 +60,7 @@
 }
 
 #myHeader.scrolled .navbar-brand img {
-    height: 55px; /* Ép logo nhỏ lại */
+    height: 55px;
 }
 
 #myHeader.scrolled .nav-link {
@@ -225,8 +225,80 @@
 .list-slide{
     margin: 0;
 }
-.test{
-    height: 100px;
+.comboSwiper{
+    padding: 10px;
+}
+.custom-combo-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid #dfdada !important;
+
+}
+.custom-combo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+}
+
+.combo-img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.watermark-logo {
+    position: absolute; 
+    top: 15px;          
+    right: 15px;        
+    width: 38px;       
+    height: auto;
+    opacity: 0.85;      
+    z-index: 2;         
+}
+
+.btn-combo-contact {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s;
+}
+.btn-combo-contact:hover {
+    background-color: #1B263B;
+    color: #ffffff;
+}
+
+.btn-xem-tat-ca {
+    display: inline-flex;
+    align-items: center;
+    background-color: #1B263B;
+    color: #ffffff;
+    border-radius: 50px;
+    padding: 6px 20px 6px 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-xem-tat-ca .icon-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: #1B263B;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px; 
+}
+
+.btn-xem-tat-ca:hover {
+    color: var(--text-main);
+    background-color: #1B263B; 
+    transform: translateY(-2px);
+}
+.btn-xem-tat-ca:hover .icon-circle i {
+    transform: translateX(3px);
+    transition: transform 0.3s ease;
 }
 @media(max-width: 768px){
     .productSwiper, .list-bg{

@@ -74,5 +74,40 @@ const swiperList = new Swiper('.productListSwiper',{
     //     },
     // }
 });
+const comboSwiper = new Swiper('.comboSwiper', {
+    // Không tự động loop như bạn yêu cầu
+    loop: false, 
+    
+    // Con trỏ bàn tay kéo thả
+    grabCursor: true, 
+
+    // LOGIC MOBILE (Mặc định): 2 cột, 2 hàng = 4 thẻ
+    slidesPerView: 2, 
+    grid: {
+        rows: 2, 
+        fill: 'row' // Đổ data theo hàng ngang trước
+    },
+    spaceBetween: 15, // Khoảng cách trên mobile
+
+    // LOGIC RESPONSIVE BẺ CONG GIAO DIỆN
+    breakpoints: {
+        // Màn hình Tablet (iPad)
+        768: {
+            slidesPerView: 3, 
+            grid: {
+                rows: 1, // Trở về 1 hàng ngang
+            },
+            spaceBetween: 20,
+        },
+        // Màn hình Laptop/PC (Đúng yêu cầu: 4 thẻ trên 1 hàng)
+        1024: {
+            slidesPerView: 4, 
+            grid: {
+                rows: 1, // Khóa cứng 1 hàng ngang
+            },
+            spaceBetween: 30, // Giãn cách rộng ra cho thoáng
+        }
+    }
+});
 
 
