@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
-@import 'swiper/css/bundle';
 
 :root {
     --bg-main: #1B263B;
@@ -35,7 +34,7 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: var(--text-main) !important; /* Ghi đè màu mặc định của Bootstrap */
+    color: var(--text-main) !important; 
     padding: 8px 24px !important;
     margin: 0px 1.4rem;
     border-radius: 50px;
@@ -56,7 +55,7 @@
 #myHeader.scrolled {
     padding-top: 5px;
     padding-bottom: 5px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* Đổ bóng đậm hơn khi cuộn */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); 
 }
 
 #myHeader.scrolled .navbar-brand img {
@@ -300,6 +299,80 @@
     transform: translateX(3px);
     transition: transform 0.3s ease;
 }
+
+.floating-widget {
+    position: fixed;   
+    bottom: 30px;      
+    right: 30px;      
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;        
+    z-index: 9999;    
+}
+.float-btn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    background-color: #fff;
+}
+.float-btn:hover {
+    transform: scale(1.1);
+}
+
+.btn-facebook, .btn-zalo {
+    background-color: var(--bg-main);
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.btn-facebook {
+    box-shadow: 0 0 0 18px rgba(8, 102, 255, 0.2); 
+    animation: pulse-ring 2s infinite; 
+
+}
+
+.btn-zalo {
+    box-shadow: 0 0 0 18px rgba(0, 104, 255, 0.2);
+    animation: pulse-ring 2s infinite; 
+}
+.zalo-text {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.btn-scroll-top {
+    background-color: var(--bg-main);
+    border-radius: 8px;       
+    font-size: 20px;
+    color: var(--text-main);
+    opacity: 0; 
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.btn-scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+@keyframes pulse-ring {
+    0% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(0, 104, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0); }
+}
+.zalo-text{
+    width: 45px;
+    height: 45px;
+}
+
 @media(max-width: 768px){
     .productSwiper, .list-bg{
         padding: 0;
