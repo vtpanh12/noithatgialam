@@ -7,8 +7,12 @@
     --text-muted: #FFFDE7;
     --border-color: #cccccc;
     --bg-footer: rgb(51, 51, 51);
+    --navy-blue: #1c2b4d;
+    --gray-bg: #f3f4f6; 
 }
-
+* {
+    outline: 1px solid red !important;
+}
 * {
     box-sizing: border-box;
     padding: 0;
@@ -372,7 +376,188 @@
     width: 45px;
     height: 45px;
 }
+.text-navy { color: var(--navy-blue) !important; }
 
+.horizontal-card {
+    border-radius: 12px;
+    transition: transform 0.3s ease;    
+    height: 160px;
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    background-color: #f8f9fa; 
+    overflow: hidden;
+    position: relative;
+}
+.horizontal-card:hover {
+    transform: translateY(-3px);
+}
+.object-fit-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+}
+.text-truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.input-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.input-icon-wrapper i {
+    position: absolute;
+    left: 15px;
+    color: #6c757d;
+    z-index: 2;
+}
+
+.custom-input {
+    background-color: var(--gray-bg);
+    border: none !important;
+    border-radius: 8px;
+    padding: 12px 15px 12px 45px; 
+    font-size: 14px;
+    color: #333;
+}
+.custom-input:focus {
+    background-color: #e9ecef;
+    box-shadow: none;
+    outline: 2px solid rgba(28, 43, 77, 0.2);
+}
+
+.btn-navy {
+    background-color: var(--navy-blue);
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+.btn-navy:hover {
+    background-color: #121c33;
+    color: #ffffff;
+    box-shadow: 0 2px 5px var(--navy-blue);
+}
+/* --- Các class màu hỗ trợ --- *
+
+/* =========================================
+   BÍ QUYẾT TẠO NỀN VÂN GIẤY (TEXTURE)
+   ========================================= */
+.footer-texture {
+    /* 1. Lót màu nền sáng */
+    background-color: #F8F9FA;
+    
+    /* 2. Ép thêm hình ảnh vân giấy (Noise/Texture) lên trên */
+    /* Bạn có thể tải một ảnh 'paper-texture.png' trong suốt từ Google Images */
+    background-image: url('/assets/images/icon/texture.jpg'); 
+    background-repeat: repeat; 
+    
+    border-top: 1px solid #e0e0e0; /* Đường viền xám mờ ngăn cách */
+}
+
+/* Xử lý Logo Vàng trên nền sáng */
+.logo-box {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px; /* Hộp bo góc sang trọng */
+    background-color: var(--bg-main)
+}
+.zalo-icon{
+    width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+}
+.fb-icon{
+    padding-top: 5px;
+    font-size: 55px;
+}
+.social-icon{
+    text-decoration: none;
+}
+/* Định dạng chữ Footer */
+.footer-text {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Dấu kẻ ngang ngắn dưới tiêu đề */
+.border-bottom-short {
+    position: relative;
+    padding-bottom: 10px;
+}
+.border-bottom-short::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px; /* Độ dài vạch kẻ */
+    height: 2px;
+    background-color: var(--navy-light);
+}
+
+/* Danh sách liên hệ */
+.footer-contact-list li {
+    margin-bottom: 12px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+/* =========================================
+   THANH ĐIỀU HƯỚNG DƯỚI CÙNG (APP-LIKE)
+   ========================================= */
+.bottom-nav-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Khóa cứng chiều cao */
+    background-color: #ffffff;
+    z-index: 1000;
+    border-top-left-radius: 20px; /* Bo góc cong nhẹ giống app */
+    border-top-right-radius: 20px;
+}
+
+/* Các icon trong thanh điều hướng */
+.bottom-nav-bar .nav-item {
+    font-size: 20px;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+/* Nút gọi điện thoại nổi bồng bềnh lên trên */
+.call-action {
+    position: relative;
+    top: -20px; /* Đẩy trồi lên khỏi thanh nav */
+}
+.call-circle {
+    width: 55px;
+    height: 55px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: 3px solid #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+.footer-title {
+    position: relative;
+    padding-bottom: 12px;
+    font-weight: 700;
+}
+
+.footer-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 45px;
+    border-bottom: 2px dashed #415A77; 
+}
 @media(max-width: 768px){
     .productSwiper, .list-bg{
         padding: 0;
@@ -383,5 +568,109 @@
     .category-title {
         font-size: 1rem;
         text-align: center;
+    }
+    .post-form{
+        padding: 15px;
+    }
+    .zalo-icon{
+    
+    display: flex;
+    justify-content: center;
+    }
+    .fb-icon{
+      
+        padding-top: 7px;
+
+    }
+    .btn-scroll-top.show{
+        visibility: hidden;
+    }
+    .footer{
+        padding: 0;
+    }
+    .footer-icon{
+        gap: 0;
+    }
+    
+    
+}
+#my-header {
+    background-color: transparent;
+    padding: 20px 0;
+}
+/* Màu nền thanh Copyright */
+.copyright-bar {
+    background-color: #1B263B; /* Xanh Navy */
+}
+
+/* =========================================
+   XỬ LÝ KHUNG CHỨA BẢN ĐỒ
+   ========================================= */
+.map-wrapper {
+    width: 100%;
+    
+    /* BÍ QUYẾT 1: Fix lỗi khe hở màu trắng */
+    /* Mặc định iframe là thẻ inline, nó sẽ chừa lại khoảng 4px khe hở dưới đáy. 
+       Lệnh line-height: 0 hoặc font-size: 0 sẽ triệt tiêu hoàn toàn khe hở này */
+    line-height: 0; 
+    
+    /* Đảm bảo bản đồ không bao giờ làm tràn trang web gây thanh cuộn ngang */
+    overflow: hidden; 
+}
+
+/* Ép Iframe hoạt động chuẩn trên mọi thiết bị */
+.map-wrapper iframe {
+    width: 100% !important; /* Bắt buộc bung full chiều ngang */
+    height: 450px;          /* Chiều cao mặc định trên PC */
+    border: none;
+    display: block;         /* Hỗ trợ triệt tiêu khe hở đáy */
+}
+
+/* =========================================
+   ĐIỀU CHỈNH RESPONSIVE CHO ĐIỆN THOẠI
+   ========================================= */
+@media (max-width: 768px) {
+    .map-wrapper iframe {
+        /* Trên điện thoại, màn hình dọc dài, nên bóp chiều cao bản đồ lại 
+           để người dùng không bị kẹt ngón tay khi vuốt màn hình */
+        height: 300px; 
+    }
+}
+
+/* HIỆU ỨNG KHI CUỘN (Lớp .scrolled do JS gắn vào) */
+/* CHÌA KHÓA: Chỉ kích hoạt hiệu ứng này trên Laptop (từ 992px trở lên) */
+@media (min-width: 992px) {
+    #my-header.scrolled {
+        background-color: #1B263B;
+        padding: 10px 0; /* Thu nhỏ Header */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+}
+/* =======================================================
+   CHẾ ĐỘ XOAY NGANG ĐIỆN THOẠI (Chiều cao hẹp, chiều ngang dài)
+   ======================================================= */
+@media (max-height: 500px) and (orientation: landscape) {
+    
+    /* 1. Giấu ngay thanh Bottom Nav (Vì màn hình xoay ngang rất lùn, để thanh này sẽ không thấy đường đọc web) */
+    .bottom-nav-bar {
+        display: none !important;
+    }
+
+    /* 2. Ép các cột trở lại thành 1 hàng dọc giống hệt Mobile cầm dọc nếu bị vỡ lưới */
+    /* Bạn thay đổi class tùy theo khối nào đang bị vỡ */
+    .horizontal-card .col-md-4,
+    .horizontal-card .col-md-8 {
+        width: 100% !important; /* Ép full 100% không cho dàn ngang */
+    }
+
+    /* 3. Thu nhỏ các ảnh to nếu nó chiếm hết màn hình */
+    .custom-card-img {
+        height: 150px !important; 
+    }
+    .logo-box{
+        width: auto;
+    }
+    .img-logo{
+        width: 200px;
     }
 }
